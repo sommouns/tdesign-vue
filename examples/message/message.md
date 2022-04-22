@@ -153,3 +153,12 @@ options | Object | - | 必需。该插件参数为 $Message.info() 等插件执�
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
 -- | - | - | --。TS 类型：`--`
+
+### MessagePlugin.config
+设置全局默认配置。同时也支持 `this.$message.config`。
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+attach | String / Function | 'body' | 指定弹框挂载的父节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body。TS 类型：`AttachNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+offset | Array | - | 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string | number>` | N
+placement | String | top | 弹出消息位置。可选项：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。TS 类型：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
+zIndex | Number | 5000 | 消息层级 | N
